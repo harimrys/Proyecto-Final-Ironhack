@@ -15,12 +15,12 @@ index = pc.Index('books')
 
 # Función de búsqueda
 def search_books(query, search_type):
-    if search_type == 'Descripción':
+    if search_type == 'Description':
         # Genera un vector para la consulta
         vector = model.encode(query).tolist()
         
         # Realiza la búsqueda en Pinecone usando argumentos nombrados
-        results = index.query(vector=vector, top_k=5, include_values=True)
+        results = index.query(vector=vector, top_k=10, include_values=True)
 
         # Obtiene los IDs y valores de los resultados
         recommended_books = []
@@ -29,21 +29,25 @@ def search_books(query, search_type):
             score = match['score']
             # Busca en el DataFrame original para obtener más información sobre el libro
             book_info = df.iloc[int(book_id)]
-            recommended_books.append({
-                'Title': book_info['Book'],
-                'Author': book_info['Author'],
-                'Description': book_info['Description'],
-                'Image_URL': book_info['Image_URL'],
-                'URL': book_info['URL'],
-                'Avg_Rating': book_info['Avg_Rating'],
-                'Score': score
-            })
+            
+            # Filtrar libros con al menos 20000 valoraciones
+            if book_info['Num_Ratings'] >= 20000:
+                recommended_books.append({
+                    'Title': book_info['Book'],
+                    'Author': book_info['Author'],
+                    'Description': book_info['Description'],
+                    'Image_URL': book_info['Image_URL'],
+                    'URL': book_info['URL'],
+                    'Avg_Rating': book_info['Avg_Rating'],
+                    'Score': score
+                })
         return recommended_books
 
+
     # Lógica para buscar por título o autor
-    elif search_type == 'Título':
+    elif search_type == 'Title':
         return df[df['Book'].str.contains(query, case=False)].to_dict('records')
-    elif search_type == 'Autor':
+    elif search_type == 'Author':
         return df[df['Author'].str.contains(query, case=False)].to_dict('records')
 
 
@@ -55,14 +59,14 @@ def get_bottom_books(n=100, min_ratings=20000):
 
 
 # Interfaz de usuario en Streamlit
-st.title("📚 Recomendador de Libros")
+st.title("📚 Book Recommender")
 
-search_type = st.selectbox("Selecciona el tipo de búsqueda", ["Título", "Autor", "Descripción"])
-query = st.text_input("Ingresa tu búsqueda:")
+search_type = st.selectbox("Select search type", ["Title", "Author", "Description"])
+query = st.text_input("Please enter your search:")
 
-if st.button("Buscar"):
+if st.button("Search"):
     if query:
-        if search_type == 'Descripción':
+        if search_type == "Description":
             results = search_books(query, search_type)
             # Muestra los resultados con imagen al lado
             for book in results:
@@ -71,9 +75,9 @@ if st.button("Buscar"):
                     st.image(book['Image_URL'], width=100)
                 with col2:
                     st.write(f"**{book['Title']}**")
-                    st.write(f"Autor: {book['Author']}")
-                    st.write(f"Rating: {book['Avg_Rating']} ⭐")
-                    st.write(f"[Ver más]({book['URL']})")
+                    st.write(f"Author: {book['Author']}")
+                    st.write(f"Rating: {book['Avg_Rating']}⭐")
+                    st.write(f"[More information]({book['URL']})")
         else:
             results = search_books(query, search_type)
             # Muestra los resultados con imagen al lado
@@ -83,14 +87,14 @@ if st.button("Buscar"):
                     st.image(book['Image_URL'], width=100)  # Muestra la imagen del libro
                 with col2:
                     st.write(f"**{book['Book']}**")  # Título del libro
-                    st.write(f"Autor: {book['Author']}")  # Autor del libro
-                    st.write(f"Rating: {book['Avg_Rating']} ⭐")
-                    st.write(f"[Ver más]({book['URL']})")  # Enlace al libro
+                    st.write(f"Author: {book['Author']}")  # Autor del libro
+                    st.write(f"Rating: {book['Avg_Rating']}⭐")
+                    st.write(f"[More information]({book['URL']})")  # Enlace al libro
     else:
-        st.warning("Por favor ingresa un término de búsqueda.")
+        st.warning("Please enter a search term.")
 
 # Botones para mostrar peores libros
-if st.button("Mostrar 100 Peores Libros"):
+if st.button("Show 100 Worst Books"):
     bottom_books = get_bottom_books()
     for book in bottom_books:
         col1, col2 = st.columns([1, 3])
@@ -101,6 +105,6 @@ if st.button("Mostrar 100 Peores Libros"):
                 st.write("**Image Not Available**")  # Mensaje cuando no hay imagen
         with col2:
             st.write(f"**{book['Book']}**")
-            st.write(f"Autor: {book['Author']}")
-            st.write(f"Rating: {book['Avg_Rating']} ⭐")
-            st.write(f"[Ver más]({book['URL']})")
+            st.write(f"Author: {book['Author']}")
+            st.write(f"Rating: {book['Avg_Rating']}⭐")
+            st.write(f"[More information]({book['URL']})")
