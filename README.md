@@ -20,24 +20,24 @@ He desarrollado una aplicación web construida con Streamlit que permite a los u
 
 ## Estructura del Proyecto
 
-/proyecto_final │ 
-├── .streamlit/                 
-│   └── config.toml                        
-├── data/                         
-│   └── df_books.csv                                 
-│   └── df_images.csv                              
-│   └── goodreads_data_with_images.csv                                  
-│   └── goodreads_data.csv
-├── notebook/                                                
-│   └── functions.py
-│   └── generate_vectors.ipynb                                              
-│   └── main.ipynb
-│   └── pinecone_setup.py                                                       
-│   └── web_scrapping.ipynb                                          
-│   └── web_scrapping.py                                       
-├── .gitattributes                                               
-├── .gitignore                                                                                       
-├── app.py
-├── requirements.txt # Dependencias del proyecto 
-└── README.md 
+/proyecto_final │                                                       
+├── .streamlit/                                                                                              
+│   └── config.toml                                                                                   
+├── data/                                                                                            
+│   └── df_books.csv                                                                                                          
+│   └── df_images.csv                                                                                           
+│   └── goodreads_data_with_images.csv                                                                                       
+│   └── goodreads_data.csv                                                   
+├── notebook/                                                                                                                            
+│   └── functions.py                                                                            
+│   └── generate_vectors.ipynb                                                                                                                                               
+│   └── main.ipynb                                                                                   
+│   └── pinecone_setup.py                                                                                                                               
+│   └── web_scrapping.ipynb                                                                                                    
+│   └── web_scrapping.py                                                                                                 
+├── .gitattributes                                                                                                                                                                      
+├── .gitignore                                                                                                                                                                           
+├── app.py                                                                                                         
+├── requirements.txt # Dependencias del proyecto                                                             
+└── README.md                                                                                            
 
