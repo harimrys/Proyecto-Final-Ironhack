@@ -38,6 +38,6 @@ He desarrollado una aplicación web construida con Streamlit que permite a los u
 ├── .gitattributes                                                                                                                                                                      
 ├── .gitignore                                                                                                                                                                           
 ├── app.py                                                                                                         
-├── requirements.txt # Dependencias del proyecto                                                             
+├── requirements.txt                                                                                                      
 └── README.md                                                                                            
 
