@@ -4,6 +4,7 @@ from sentence_transformers import SentenceTransformer
 from pinecone import Pinecone
 import time
 
+
 # Cargar el DataFrame
 df = pd.read_csv("data/df_images.csv")  # Reemplaza con la ruta a tu archivo CSV
 
@@ -76,6 +77,13 @@ st.markdown("<br><br>", unsafe_allow_html=True)  # Añadir 2 líneas de espacio
 st.sidebar.image("Designer (10).jpeg", caption="Catch them all!!🔍🐉", use_column_width=True) 
 
 page = st.sidebar.selectbox("Try your luck", ["Book recommender", "100 Worst books", "Surprise me!"])
+
+
+spotify_link = "https://open.spotify.com/embed/playlist/34HMPdg2ywHWz0EmCE64yo?"  # Cambia esto por el ID de tu canción
+# Incrustar el reproductor de Spotify
+st.sidebar.header("Escucha Música")
+st.sidebar.markdown(f'<iframe src="{spotify_link}" width="300" height="150" frameborder="0" allowtransparency="true" allow="encrypted-media" title="Spotify"></iframe>', unsafe_allow_html=True)
+
 
 if page == "Book recommender":
     search_type = st.selectbox("Select search type", ["Title", "Author", "Description"])
