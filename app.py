@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 from sentence_transformers import SentenceTransformer
 from pinecone import Pinecone
+import time
 
 # Cargar el DataFrame
 df = pd.read_csv("data/df_images.csv")  # Reemplaza con la ruta a tu archivo CSV
@@ -59,42 +60,58 @@ def get_bottom_books(n=100, min_ratings=20000):
 
 
 # Interfaz de usuario en Streamlit
-st.title("📚 Book Recommender")
 
-search_type = st.selectbox("Select search type", ["Title", "Author", "Description"])
-query = st.text_input("Please enter your search:")
+# Configurar la página
+st.set_page_config(
+    page_title = "Bookémon",  # Cambia esto por el título deseado
+    page_icon = "📚",  # Puedes añadir un icono si lo deseas
+)
 
-if st.button("Search"):
-    if query:
-        if search_type == "Description":
-            results = search_books(query, search_type)
-            # Muestra los resultados con imagen al lado
-            for book in results:
-                col1, col2 = st.columns([1, 3])
-                with col1:
-                    st.image(book['Image_URL'], width=100)
-                with col2:
-                    st.write(f"**{book['Title']}**")
-                    st.write(f"Author: {book['Author']}")
-                    st.write(f"Rating: {book['Avg_Rating']}⭐")
-                    st.write(f"[More information]({book['URL']})")
+st.title("📚✨ Bookémon: Catch them all! 🔍🐉")
+
+# Espacio entre el título y el contenido
+st.markdown("<br><br>", unsafe_allow_html=True)  # Añadir 2 líneas de espacio
+
+# Agregar una imagen en la barra lateral
+st.sidebar.image("Designer (10).jpeg", caption="Catch them all!!🔍🐉", use_column_width=True) 
+
+page = st.sidebar.selectbox("Try your luck", ["Book recommender", "100 Worst books", "Surprise me!"])
+
+if page == "Book recommender":
+    search_type = st.selectbox("Select search type", ["Title", "Author", "Description"])
+    query = st.text_input("Please enter your search:")
+    
+    if st.button("Search"):
+        if query:
+            if search_type == "Description":
+                results = search_books(query, search_type)
+                # Muestra los resultados con imagen al lado
+                for book in results:
+                    col1, col2 = st.columns([1, 3])
+                    with col1:
+                        st.image(book['Image_URL'], width=100)
+                    with col2:
+                        st.write(f"**{book['Title']}**")
+                        st.write(f"Author: {book['Author']}")
+                        st.write(f"Rating: {book['Avg_Rating']}⭐")
+                        st.write(f"[More information]({book['URL']})")
+            else:
+                results = search_books(query, search_type)
+                # Muestra los resultados con imagen al lado
+                for book in results:
+                    col1, col2 = st.columns([1, 3])
+                    with col1:
+                        st.image(book['Image_URL'], width=100)  # Muestra la imagen del libro
+                    with col2:
+                        st.write(f"**{book['Book']}**")  # Título del libro
+                        st.write(f"Author: {book['Author']}")  # Autor del libro
+                        st.write(f"Rating: {book['Avg_Rating']}⭐")
+                        st.write(f"[More information]({book['URL']})")  # Enlace al libro
         else:
-            results = search_books(query, search_type)
-            # Muestra los resultados con imagen al lado
-            for book in results:
-                col1, col2 = st.columns([1, 3])
-                with col1:
-                    st.image(book['Image_URL'], width=100)  # Muestra la imagen del libro
-                with col2:
-                    st.write(f"**{book['Book']}**")  # Título del libro
-                    st.write(f"Author: {book['Author']}")  # Autor del libro
-                    st.write(f"Rating: {book['Avg_Rating']}⭐")
-                    st.write(f"[More information]({book['URL']})")  # Enlace al libro
-    else:
-        st.warning("Please enter a search term.")
+            st.warning("Please enter a search term.")
 
-# Botones para mostrar peores libros
-if st.button("Show 100 Worst Books"):
+elif page == "100 Worst books":
+    # Mostrar los 100 peores libros
     bottom_books = get_bottom_books()
     for book in bottom_books:
         col1, col2 = st.columns([1, 3])
@@ -108,3 +125,21 @@ if st.button("Show 100 Worst Books"):
             st.write(f"Author: {book['Author']}")
             st.write(f"Rating: {book['Avg_Rating']}⭐")
             st.write(f"[More information]({book['URL']})")
+
+elif page == "Surprise me!":
+        # Espacio para la animación
+        placeholder = st.empty()
+            
+        # Mostrar la animación de sombrero mágico
+        placeholder.image("giphy.gif")  # Reemplaza con la ruta de tu animación
+        time.sleep(3)  # Espera unos segundos para mostrar el GIF
+            
+        # Elegir un libro al azar
+        libro_aleatorio = df.sample()
+            
+        # Limpiar el espacio y mostrar el libro
+        placeholder.empty()  # Limpia la animación
+        st.markdown(f"### We recommend: **{libro_aleatorio['Book'].values[0]}**")
+        st.markdown(f"**Author:** {libro_aleatorio['Author'].values[0]}")
+        st.markdown(f"**Description:** {libro_aleatorio['Description'].values[0]}")
+        st.image(libro_aleatorio['Image_URL'].values[0], width=200)
