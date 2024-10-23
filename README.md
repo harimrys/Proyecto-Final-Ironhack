@@ -20,8 +20,8 @@ La aplicación permite a los usuarios buscar libros por **título**, **autor** o
   
 - **📁 data/**:
   - `df_books.csv`: Datos de libros.
-  - `df_images.csv`: Enlaces a imágenes de los libros.
-  - `goodreads_data_with_images.csv`: Dataset principal de libros con imágenes.
+  - `df_images.csv`: Dataset final con las imagenes de los libros y columnas seleccionadas.
+  - `goodreads_data_with_images.csv`: Dataset de libros con imágenes.
   - `goodreads_data.csv`: Dataset principal de libros sin imágenes.
 
 - **📁 gif/**:
