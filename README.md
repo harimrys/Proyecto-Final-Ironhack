@@ -25,7 +25,7 @@ La aplicación permite a los usuarios buscar libros por **título**, **autor** o
   - `goodreads_data.csv`: Dataset principal de libros sin imágenes.
 
 - **🖼 gif**:
--  - `Animation.gif`: Demostración de la aplicación en formato GIF.
+  - `Animation.gif`: Demostración de la aplicación en formato GIF.
   - `Designer (10).jpeg`: Imagen de diseño utilizada en el proyecto.
   - `giphy.gif`: GIF de demostración.
  
