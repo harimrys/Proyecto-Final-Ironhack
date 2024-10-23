@@ -31,13 +31,32 @@ La aplicación permite a los usuarios buscar libros por **título**, **autor** o
 ![Demo Streamlit](gif/Animation.gif)
 
 
-
-
 ## 🚀 Instalación
 
 1. Clona este repositorio:
    ```bash
    git clone https://github.com/tu_usuario/nombre_del_repositorio.git
+   
+2. Navega a la carpeta del proyecto:
+   ```bash
+   cd nombre_del_repositorio
+   
+3. Instala las dependencias necesarias:
+   ```bash
+   pip install -r requirements.txt
+
+## 🏁 Uso
+
+1. Inicia la aplicación:
+   ```bash
+   streamlit run app.py
+
+## 📉 100 Peores Libros
+Hemos recopilado una lista de los 100 peores libros según las valoraciones de los usuarios. Esta sección te ayudará a evitar lecturas decepcionantes y a hacer elecciones más informadas.
+
+## 🤝 Contribuciones
+Si deseas contribuir a este proyecto, por favor envía un pull request o abre un issue para discutir posibles mejoras.
+
 
 ## Estructura del Proyecto
 
