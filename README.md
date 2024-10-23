@@ -2,9 +2,11 @@
 
 ¡Bienvenido al Recomendador de Libros! Este es mi proyecto final del bootcamp de Ironhack de Data Analytics, donde se ha desarrollado una aplicación de recomendación de libros utilizando tecnologías de análisis de datos y herramientas modernas.
 
+
 ## 🌟 Descripción
 
 La aplicación permite a los usuarios buscar libros por **título**, **autor** o **descripción**. Además, ofrece recomendaciones personalizadas basadas en las descripciones proporcionadas. Los usuarios pueden explorar visualmente los géneros de los libros y descubrir nuevas lecturas a través de una interfaz interactiva.
+
 
 ## 💻 Tecnologías Utilizadas
 
@@ -14,6 +16,7 @@ La aplicación permite a los usuarios buscar libros por **título**, **autor** o
 - **Pinecone**: Para la implementación de búsqueda semántica y almacenamiento de descripciones de libros.
 - **BeautifulSoup y Requests**: Para realizar web scraping y obtener imágenes de las portadas de los libros.
 
+
 ## 🌈 Características
 
 - **🔍 Búsqueda por Título, Autor o Descripción**: Encuentra libros específicos rápidamente.
@@ -22,9 +25,8 @@ La aplicación permite a los usuarios buscar libros por **título**, **autor** o
 - **📈 Gráfico de Libros con Más Valoraciones**: Muestra los libros más valorados por los usuarios.
 - **🌌 Visualización de Nubes de Palabras**: Representa palabras clave de los géneros más populares.
 
-## 🎥 GIF de Demostración
 
-Aquí hay una animación que muestra cómo funciona la aplicación:
+## 🎥 GIF de Demostración
 
 ![Demo Streamlit](gif/Animation.gif)
 
