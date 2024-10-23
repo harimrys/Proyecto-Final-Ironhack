@@ -44,8 +44,7 @@ La aplicación permite a los usuarios buscar libros por **título**, **autor** o
   
 - **🖼 Otros**:
   - `Designer (10).jpeg`: Imagen de diseño utilizada en el proyecto.
-  - `giphy.gif`: Otro GIF de demostración.
-  - `nube_palabras.png`: Visualización de la nube de palabras generada.
+  - `giphy.gif`: GIF de demostración.
 
 - **📄 Otros archivos**:
   - `README.md`: Documentación del proyecto.
