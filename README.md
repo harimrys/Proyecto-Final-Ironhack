@@ -1,4 +1,8 @@
 # 📚✨ Bookémon: ¡Atrápalos Todos! 🔍🐉
+
+![Demo Streamlit](gif/Animation.gif)
+
+
 Este proyecto se ha desarrollado como el proyecto final del bootcamp de **Ironhack Data Analytics**.
 
 He desarrollado una aplicación web construida con Streamlit que permite a los usuarios buscar libros por título, autor o descripción. Utiliza Pinecone para mejorar la búsqueda semántica de libros y ofrecer recomendaciones personalizadas. 
