@@ -24,9 +24,11 @@ La aplicación permite a los usuarios buscar libros por **título**, **autor** o
   - `goodreads_data_with_images.csv`: Dataset de libros con imágenes.
   - `goodreads_data.csv`: Dataset principal de libros sin imágenes.
 
-- **📁 gif/**:
-  - `Animation.gif`: Demostración de la aplicación en formato GIF.
-
+- **🖼 gif**:
+-  - `Animation.gif`: Demostración de la aplicación en formato GIF.
+  - `Designer (10).jpeg`: Imagen de diseño utilizada en el proyecto.
+  - `giphy.gif`: GIF de demostración.
+ 
 - **📁 notebook/**:
   - `functions.py`: Funciones auxiliares utilizadas en los notebooks.
   - `generate_vectors.ipynb`: Generación de vectores para búsqueda semántica con Pinecone.
@@ -42,10 +44,6 @@ La aplicación permite a los usuarios buscar libros por **título**, **autor** o
   - `app.py`: Archivo principal de la aplicación Streamlit.
   - `config.yaml`: Archivo de configuración general del proyecto.
   
-- **🖼 Otros**:
-  - `Designer (10).jpeg`: Imagen de diseño utilizada en el proyecto.
-  - `giphy.gif`: GIF de demostración.
-
 - **📄 Otros archivos**:
   - `README.md`: Documentación del proyecto.
   - `requirements.txt`: Lista de dependencias necesarias para ejecutar el proyecto.
