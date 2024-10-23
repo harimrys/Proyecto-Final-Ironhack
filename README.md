@@ -8,6 +8,50 @@
 La aplicación permite a los usuarios buscar libros por **título**, **autor** o **descripción**. Además, ofrece recomendaciones personalizadas basadas en las descripciones proporcionadas. Los usuarios pueden explorar visualmente los géneros de los libros y descubrir nuevas lecturas a través de una interfaz interactiva.
 
 
+## 🎥 GIF de Demostración
+
+![Demo Streamlit](gif/Animation.gif)
+
+
+## 🗂 Estructura del Proyecto
+
+- **📁 .streamlit/**: 
+  - `config.toml`: Archivo de configuración específico de Streamlit.
+  
+- **📁 data/**:
+  - `df_books.csv`: Datos de libros.
+  - `df_images.csv`: Enlaces a imágenes de los libros.
+  - `goodreads_data_with_images.csv`: Dataset principal de libros con imágenes.
+  - `goodreads_data.csv`: Dataset principal de libros sin imágenes.
+
+- **📁 gif/**:
+  - `Animation.gif`: Demostración de la aplicación en formato GIF.
+
+- **📁 notebook/**:
+  - `functions.py`: Funciones auxiliares utilizadas en los notebooks.
+  - `generate_vectors.ipynb`: Generación de vectores para búsqueda semántica con Pinecone.
+  - `graphics.ipynb`: Análisis y generación de gráficos interactivos.
+  - `main.ipynb`: Notebook principal para la limpieza y análisis de los datos.
+  - `pinecone_setup.py`: Configuración inicial y carga de vectores en Pinecone.
+  - `web_scrapping.ipynb`: Proceso de scraping para obtener información de los libros.
+  - `web_scrapping.py`: Script de scraping en Python.
+
+- **📜 Archivos de configuración**:
+  - `.gitattributes`: Configuración de atributos de Git.
+  - `.gitignore`: Archivos y carpetas que Git debe ignorar.
+  - `app.py`: Archivo principal de la aplicación Streamlit.
+  - `config.yaml`: Archivo de configuración general del proyecto.
+  
+- **🖼 Otros**:
+  - `Designer (10).jpeg`: Imagen de diseño utilizada en el proyecto.
+  - `giphy.gif`: Otro GIF de demostración.
+  - `nube_palabras.png`: Visualización de la nube de palabras generada.
+
+- **📄 Otros archivos**:
+  - `README.md`: Documentación del proyecto.
+  - `requirements.txt`: Lista de dependencias necesarias para ejecutar el proyecto.
+
+
 ## 💻 Tecnologías Utilizadas
 
 - **Python**: Para la lógica del backend y procesamiento de datos.
@@ -24,12 +68,6 @@ La aplicación permite a los usuarios buscar libros por **título**, **autor** o
 - **👎 100 Peores Libros**: Una sección dedicada a los libros menos recomendados, para que sepas cuáles evitar.
 - **📈 Gráfico de Libros con Más Valoraciones**: Muestra los libros más valorados por los usuarios.
 - **🌌 Visualización de Nubes de Palabras**: Representa palabras clave de los géneros más populares.
-
-
-## 🎥 GIF de Demostración
-
-![Demo Streamlit](gif/Animation.gif)
-
 
 ## 🚀 Instalación
 
