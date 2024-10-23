@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+from notebook.functions import *
 from sentence_transformers import SentenceTransformer
 from pinecone import Pinecone
 import time
@@ -7,11 +8,11 @@ import os
 from dotenv import load_dotenv, find_dotenv
 load_dotenv()
 
-
 my_key = os.getenv("my_key")
 
 # Cargar el DataFrame
 df = pd.read_csv("data/df_images.csv")  # Reemplaza con la ruta a tu archivo CSV
+
 
 # Inicializa el modelo de embeddings
 model = SentenceTransformer('all-MiniLM-L6-v2')  # O el modelo que hayas elegido
@@ -19,6 +20,7 @@ model = SentenceTransformer('all-MiniLM-L6-v2')  # O el modelo que hayas elegido
 # Conecta a Pinecone
 pc = Pinecone(api_key= my_key)  # Reemplaza con tu clave de API
 index = pc.Index('books')
+
 
 # Función de búsqueda
 def search_books(query, search_type):
@@ -84,10 +86,10 @@ st.sidebar.image("Designer (10).jpeg", caption="Catch them all!!🔍🐉", use_c
 page = st.sidebar.selectbox("Try your luck", ["Book recommender", "100 Worst books", "Surprise me!"])
 
 
-spotify_link = "https://open.spotify.com/embed/playlist/34HMPdg2ywHWz0EmCE64yo?"  # Cambia esto por el ID de tu canción
+spotify_link = "https://open.spotify.com/embed/playlist/6OZmoGvgnCWDHIFUJSPyOg?"  # Cambia esto por el ID de tu canción
 # Incrustar el reproductor de Spotify
-st.sidebar.header("Escucha Música")
-st.sidebar.markdown(f'<iframe src="{spotify_link}" width="350" height="200" frameborder="0" allowtransparency="true" allow="encrypted-media" title="Spotify"></iframe>', unsafe_allow_html=True)
+st.sidebar.header("")
+st.sidebar.markdown(f'<iframe src="{spotify_link}" width="340" height="260" frameborder="0" allowtransparency="true" allow="encrypted-media" title="Spotify"></iframe>', unsafe_allow_html=True)
 
 
 if page == "Book recommender":
@@ -156,3 +158,5 @@ elif page == "Surprise me!":
         st.markdown(f"**Author:** {libro_aleatorio['Author'].values[0]}")
         st.markdown(f"**Description:** {libro_aleatorio['Description'].values[0]}")
         st.image(libro_aleatorio['Image_URL'].values[0], width=200)
+
+
