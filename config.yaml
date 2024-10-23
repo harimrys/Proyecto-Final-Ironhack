@@ -1,0 +1,26 @@
+# Project settings
+project:
+  name: My ML Project
+
+# Paths configuration
+paths:
+  streamlit: config.toml
+  df_images: data/df_images.csv
+  functions: notebook/functions.py
+  generate_vectors: notebooks/generate_vectors.ipynb
+  graphs: notebooks/graphics.ipynb
+  main_notebook: notebooks/main.ipynb
+  pinecone_setup: notebooks/pinecone_setup.py
+  web_scrapping: notebooks/web_scrapping.ipynb
+  web_scrapping2: notebooks/web_scrapping.py
+  
+# Picone configuration
+pinecone:
+  api_key: my_key
+  environment: us-east-1
+  index: books
+
+# Streamlit configuration
+streamlit:
+  port: 8501    
+

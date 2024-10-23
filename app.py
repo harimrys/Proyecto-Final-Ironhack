@@ -159,4 +159,3 @@ elif page == "Surprise me!":
         st.markdown(f"**Description:** {libro_aleatorio['Description'].values[0]}")
         st.image(libro_aleatorio['Image_URL'].values[0], width=200)
 
-
