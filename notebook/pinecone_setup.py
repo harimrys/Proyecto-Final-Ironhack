@@ -1,8 +1,13 @@
 import os
 from pinecone import Pinecone, ServerlessSpec
+from dotenv import load_dotenv, find_dotenv
+load_dotenv()
+
+
+my_key = os.getenv("my_key")
 
 # Crea una instancia de Pinecone
-pc = Pinecone(api_key = "c87f754c-84b9-420e-aa7d-9bc6929fe641")
+pc = Pinecone(api_key = my_key)
 
 # Crear un índice llamado 'books'
 if 'books' not in pc.list_indexes().names():

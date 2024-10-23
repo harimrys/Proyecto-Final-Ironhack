@@ -3,7 +3,12 @@ import pandas as pd
 from sentence_transformers import SentenceTransformer
 from pinecone import Pinecone
 import time
+import os
+from dotenv import load_dotenv, find_dotenv
+load_dotenv()
 
+
+my_key = os.getenv("my_key")
 
 # Cargar el DataFrame
 df = pd.read_csv("data/df_images.csv")  # Reemplaza con la ruta a tu archivo CSV
@@ -12,7 +17,7 @@ df = pd.read_csv("data/df_images.csv")  # Reemplaza con la ruta a tu archivo CSV
 model = SentenceTransformer('all-MiniLM-L6-v2')  # O el modelo que hayas elegido
 
 # Conecta a Pinecone
-pc = Pinecone(api_key="c87f754c-84b9-420e-aa7d-9bc6929fe641")  # Reemplaza con tu clave de API
+pc = Pinecone(api_key= my_key)  # Reemplaza con tu clave de API
 index = pc.Index('books')
 
 # Función de búsqueda
@@ -82,7 +87,7 @@ page = st.sidebar.selectbox("Try your luck", ["Book recommender", "100 Worst boo
 spotify_link = "https://open.spotify.com/embed/playlist/34HMPdg2ywHWz0EmCE64yo?"  # Cambia esto por el ID de tu canción
 # Incrustar el reproductor de Spotify
 st.sidebar.header("Escucha Música")
-st.sidebar.markdown(f'<iframe src="{spotify_link}" width="300" height="150" frameborder="0" allowtransparency="true" allow="encrypted-media" title="Spotify"></iframe>', unsafe_allow_html=True)
+st.sidebar.markdown(f'<iframe src="{spotify_link}" width="350" height="200" frameborder="0" allowtransparency="true" allow="encrypted-media" title="Spotify"></iframe>', unsafe_allow_html=True)
 
 
 if page == "Book recommender":
