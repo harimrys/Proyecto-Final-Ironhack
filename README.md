@@ -1,6 +1,6 @@
 # 📚✨ Bookémon: ¡Atrápalos Todos! 🔍🐉
 
-¡Bienvenido al Recomendador de Libros! Este es mi proyecto final del bootcamp de Ironhack de Data Analytics, donde se ha desarrollado una aplicación de recomendación de libros utilizando tecnologías de análisis de datos y herramientas modernas.
+¡Bienvenido a Bookémon! Este es mi proyecto final del bootcamp de Ironhack de Data Analytics, donde se ha desarrollado una aplicación de recomendación de libros utilizando tecnologías de análisis de datos y herramientas modernas.
 
 
 ## 🌟 Descripción
