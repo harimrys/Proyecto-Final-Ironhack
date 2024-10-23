@@ -95,27 +95,3 @@ Hemos recopilado una lista de los 100 peores libros según las valoraciones de l
 ## 🤝 Contribuciones
 Si deseas contribuir a este proyecto, por favor envía un pull request o abre un issue para discutir posibles mejoras.
 
-
-## Estructura del Proyecto
-
-/proyecto_final │                                                       
-├── .streamlit/                                                                                              
-│   └── config.toml                                                                                   
-├── data/                                                                                            
-│   └── df_books.csv                                                                                                          
-│   └── df_images.csv                                                                                           
-│   └── goodreads_data_with_images.csv                                                                                       
-│   └── goodreads_data.csv                                                   
-├── notebook/                                                                                                                            
-│   └── functions.py                                                                            
-│   └── generate_vectors.ipynb                                                                                                                                               
-│   └── main.ipynb                                                                                   
-│   └── pinecone_setup.py                                                                                                                               
-│   └── web_scrapping.ipynb                                                                                                    
-│   └── web_scrapping.py                                                                                                 
-├── .gitattributes                                                                                                                                                                      
-├── .gitignore                                                                                                                                                                           
-├── app.py                                                                                                         
-├── requirements.txt                                                                                                      
-└── README.md                                                                                            
-
