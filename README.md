@@ -1,26 +1,41 @@
 # 📚✨ Bookémon: ¡Atrápalos Todos! 🔍🐉
 
+¡Bienvenido al Recomendador de Libros! Este es mi proyecto final del bootcamp de Ironhack de Data Analytics, donde se ha desarrollado una aplicación de recomendación de libros utilizando tecnologías de análisis de datos y herramientas modernas.
+
+## 🌟 Descripción
+
+La aplicación permite a los usuarios buscar libros por **título**, **autor** o **descripción**. Además, ofrece recomendaciones personalizadas basadas en las descripciones proporcionadas. Los usuarios pueden explorar visualmente los géneros de los libros y descubrir nuevas lecturas a través de una interfaz interactiva.
+
+## 💻 Tecnologías Utilizadas
+
+- **Python**: Para la lógica del backend y procesamiento de datos.
+- **Streamlit**: Para la creación de la interfaz de usuario interactiva.
+- **Pandas**: Para la manipulación de datos y análisis.
+- **Pinecone**: Para la implementación de búsqueda semántica y almacenamiento de descripciones de libros.
+- **BeautifulSoup y Requests**: Para realizar web scraping y obtener imágenes de las portadas de los libros.
+
+## 🌈 Características
+
+- **🔍 Búsqueda por Título, Autor o Descripción**: Encuentra libros específicos rápidamente.
+- **🎲 Recomendaciones Aleatorias**: Recibe sugerencias de libros al azar.
+- **👎 100 Peores Libros**: Una sección dedicada a los libros menos recomendados, para que sepas cuáles evitar.
+- **📈 Gráfico de Libros con Más Valoraciones**: Muestra los libros más valorados por los usuarios.
+- **🌌 Visualización de Nubes de Palabras**: Representa palabras clave de los géneros más populares.
+
+## 🎥 GIF de Demostración
+
+Aquí hay una animación que muestra cómo funciona la aplicación:
+
 ![Demo Streamlit](gif/Animation.gif)
 
 
-Este proyecto se ha desarrollado como el proyecto final del bootcamp de **Ironhack Data Analytics**.
 
-He desarrollado una aplicación web construida con Streamlit que permite a los usuarios buscar libros por título, autor o descripción. Utiliza Pinecone para mejorar la búsqueda semántica de libros y ofrecer recomendaciones personalizadas. 
 
-## Características
+## 🚀 Instalación
 
-- **Búsqueda por Título:** Encuentra libros utilizando el título del libro.
-- **Búsqueda por Autor:** Busca libros basados en el nombre del autor.
-- **Búsqueda por Descripción:** Recomienda libros según una descripción o género literario proporcionado.
-- **Imágenes de Libros:** Muestra la portada del libro junto a la información.
-- **Interfaz Intuitiva:** Una interfaz de usuario sencilla y fácil de navegar.
-
-## Tecnologías Utilizadas
-
-- [Streamlit](https://streamlit.io/) - Framework para crear aplicaciones web interactivas.
-- [Pinecone](https://www.pinecone.io/) - Servicio para implementar búsqueda semántica de alta calidad.
-- Python - Lenguaje de programación utilizado para el desarrollo.
-- Pandas - Biblioteca para la manipulación de datos.
+1. Clona este repositorio:
+   ```bash
+   git clone https://github.com/tu_usuario/nombre_del_repositorio.git
 
 ## Estructura del Proyecto
 
