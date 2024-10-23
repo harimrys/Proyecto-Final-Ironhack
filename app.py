@@ -81,7 +81,7 @@ st.title("📚✨ Bookémon: Catch them all! 🔍🐉")
 st.markdown("<br><br>", unsafe_allow_html=True)  # Añadir 2 líneas de espacio
 
 # Agregar una imagen en la barra lateral
-st.sidebar.image("Designer (10).jpeg", caption="Catch them all!!🔍🐉", use_column_width=True) 
+st.sidebar.image("gif/Designer (10).jpeg", caption="Catch them all!!🔍🐉", use_column_width=True) 
 
 page = st.sidebar.selectbox("Try your luck", ["Book recommender", "100 Worst books", "Surprise me!"])
 
@@ -146,7 +146,7 @@ elif page == "Surprise me!":
         placeholder = st.empty()
             
         # Mostrar la animación de sombrero mágico
-        placeholder.image("giphy.gif")  # Reemplaza con la ruta de tu animación
+        placeholder.image("gif/giphy.gif")  # Reemplaza con la ruta de tu animación
         time.sleep(3)  # Espera unos segundos para mostrar el GIF
             
         # Elegir un libro al azar
