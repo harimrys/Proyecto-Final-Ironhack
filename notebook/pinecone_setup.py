@@ -9,17 +9,17 @@ my_key = os.getenv("my_key")
 # Crea una instancia de Pinecone
 pc = Pinecone(api_key = my_key)
 
-# Crear un índice llamado 'books'
+# Se crea un índice llamado 'books'
 if 'books' not in pc.list_indexes().names():
     pc.create_index(
         name='books',
-        dimension=384,  # Usar 768 como dimensión de ejemplo para embeddings
-        metric='euclidean',  # Puedes cambiar esto si lo necesitas
+        dimension=384,  
+        metric='euclidean', 
         spec=ServerlessSpec(
-            cloud='aws',  # Cambia según tus necesidades
-            region='us-east-1'  # Cambia según tus necesidades
+            cloud='aws',  
+            region='us-east-1' 
         )
     )
 
-# Conectar al índice
+# Conecta con el índice
 index = pc.Index('books')
