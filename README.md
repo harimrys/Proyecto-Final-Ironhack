@@ -85,9 +85,6 @@ La aplicación permite a los usuarios buscar libros por **título**, **autor** o
    ```bash
    streamlit run app.py
 
-## 📉 100 Peores Libros
-Hemos recopilado una lista de los 100 peores libros según las valoraciones de los usuarios. Esta sección te ayudará a evitar lecturas decepcionantes y a hacer elecciones más informadas.
-
 ## 🤝 Contribuciones
 Si deseas contribuir a este proyecto, por favor envía un pull request o abre un issue para discutir posibles mejoras.
 ![Imagen](gif/Presentación_Vuelta_al_Cole_Bienvenida_a_Clases_Infantil_Ilustrado_Colores_Pasteles-removebg-Photoroom.png)
