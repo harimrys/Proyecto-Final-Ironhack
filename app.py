@@ -10,19 +10,14 @@ load_dotenv()
 
 my_key = os.getenv("my_key")
 
-# Cargar el DataFrame
-df = pd.read_csv("data/df_images.csv")  # Reemplaza con la ruta a tu archivo CSV
+df = pd.read_csv("data/df_images.csv")  
 
+model = SentenceTransformer('all-MiniLM-L6-v2')  
 
-# Inicializa el modelo de embeddings
-model = SentenceTransformer('all-MiniLM-L6-v2')  # O el modelo que hayas elegido
-
-# Conecta a Pinecone
-pc = Pinecone(api_key= my_key)  # Reemplaza con tu clave de API
+pc = Pinecone(api_key= my_key)  
 index = pc.Index('books')
 
 
-# Función de búsqueda
 def search_books(query, search_type):
     if search_type == 'Description':
         # Genera un vector para la consulta
@@ -71,14 +66,14 @@ def get_bottom_books(n=100, min_ratings=20000):
 
 # Configurar la página
 st.set_page_config(
-    page_title = "Bookémon",  # Cambia esto por el título deseado
-    page_icon = "📚",  # Puedes añadir un icono si lo deseas
+    page_title = "Bookémon",
+    page_icon = "📚",  
 )
 
 st.title("📚✨ Bookémon: Catch them all! 🔍🐉")
 
 # Espacio entre el título y el contenido
-st.markdown("<br><br>", unsafe_allow_html=True)  # Añadir 2 líneas de espacio
+st.markdown("<br><br>", unsafe_allow_html=True)  # Añade 2 líneas de espacio
 
 # Agregar una imagen en la barra lateral
 st.sidebar.image("gif/Designer (10).jpeg", caption="Catch them all!!🔍🐉", use_column_width=True) 
@@ -86,8 +81,7 @@ st.sidebar.image("gif/Designer (10).jpeg", caption="Catch them all!!🔍🐉", u
 page = st.sidebar.selectbox("Try your luck", ["Book recommender", "100 Worst books", "Surprise me!"])
 
 
-spotify_link = "https://open.spotify.com/embed/playlist/6OZmoGvgnCWDHIFUJSPyOg?"  # Cambia esto por el ID de tu canción
-# Incrustar el reproductor de Spotify
+spotify_link = "https://open.spotify.com/embed/playlist/6OZmoGvgnCWDHIFUJSPyOg?" 
 st.sidebar.header("")
 st.sidebar.markdown(f'<iframe src="{spotify_link}" width="340" height="260" frameborder="0" allowtransparency="true" allow="encrypted-media" title="Spotify"></iframe>', unsafe_allow_html=True)
 
@@ -146,7 +140,7 @@ elif page == "Surprise me!":
         placeholder = st.empty()
             
         # Mostrar la animación de sombrero mágico
-        placeholder.image("gif/giphy.gif")  # Reemplaza con la ruta de tu animación
+        placeholder.image("gif/giphy.gif")  
         time.sleep(3)  # Espera unos segundos para mostrar el GIF
             
         # Elegir un libro al azar
@@ -159,3 +153,7 @@ elif page == "Surprise me!":
         st.markdown(f"**Description:** {libro_aleatorio['Description'].values[0]}")
         st.image(libro_aleatorio['Image_URL'].values[0], width=200)
 
+
+st.sidebar.empty()
+logo_url = "gif/logo_hcbank.jpeg"  
+st.sidebar.image(logo_url, width=100) 
