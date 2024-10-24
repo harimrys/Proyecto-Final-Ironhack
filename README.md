@@ -69,11 +69,11 @@ La aplicación permite a los usuarios buscar libros por **título**, **autor** o
 
 1. Clona este repositorio:
    ```bash
-   git clone https://github.com/tu_usuario/nombre_del_repositorio.git
+   git clone https://github.com/harimrys/Proyecto-Final-Ironhack.git
    
 2. Navega a la carpeta del proyecto:
    ```bash
-   cd nombre_del_repositorio
+   cd Proyecto-Final-Ironhack
    
 3. Instala las dependencias necesarias:
    ```bash
