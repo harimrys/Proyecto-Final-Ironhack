@@ -12,7 +12,6 @@ La aplicación permite a los usuarios buscar libros por **título**, **autor** o
 
 ![Demo Streamlit](gif/Animation.gif)
 
-
 ## 🗂 Estructura del Proyecto
 
 - **📁 .streamlit/**: 
@@ -91,4 +90,4 @@ Hemos recopilado una lista de los 100 peores libros según las valoraciones de l
 
 ## 🤝 Contribuciones
 Si deseas contribuir a este proyecto, por favor envía un pull request o abre un issue para discutir posibles mejoras.
-
+![Imagen](gif/Presentación_Vuelta_al_Cole_Bienvenida_a_Clases_Infantil_Ilustrado_Colores_Pasteles-removebg-Photoroom.png)
