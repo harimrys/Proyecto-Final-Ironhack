@@ -86,6 +86,7 @@ La aplicación permite a los usuarios buscar libros por **título**, **autor** o
    
 ## ⚙️ Links de interés
 [Dataset](https://www.kaggle.com/datasets/ishikajohari/best-books-10k-multi-genre-data)
+
 [Presentación](https://www.canva.com/design/DAGUfAKUgM0/ccXyGPAulm50Dy9xr3Yr3Q/edit?utm_content=DAGUfAKUgM0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 
