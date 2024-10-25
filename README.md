@@ -2,7 +2,6 @@
 
 ¡Bienvenido a Bookémon! Este es mi proyecto final del bootcamp de Ironhack de Data Analytics, donde he desarrollado una aplicación de recomendación de libros utilizando tecnologías de análisis de datos y herramientas modernas.
 
-
 ## 🌟 Descripción
 
 La aplicación permite a los usuarios buscar libros por **título**, **autor** o **descripción**. Además, ofrece recomendaciones personalizadas basadas en las descripciones proporcionadas. Los usuarios pueden explorar visualmente los géneros de los libros y descubrir nuevas lecturas a través de una interfaz interactiva.
@@ -84,6 +83,14 @@ La aplicación permite a los usuarios buscar libros por **título**, **autor** o
 1. Inicia la aplicación:
    ```bash
    streamlit run app.py
+   
+## ⚙️ Links de interés
+![Dataset](https://www.kaggle.com/datasets/ishikajohari/best-books-10k-multi-genre-data)
+![Presentación](https://www.canva.com/design/DAGUfAKUgM0/ccXyGPAulm50Dy9xr3Yr3Q/edit?utm_content=DAGUfAKUgM0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+
+
+
+
 
 ## 🤝 Contribuciones
 Si deseas contribuir a este proyecto, por favor envía un pull request o abre un issue para discutir posibles mejoras.
